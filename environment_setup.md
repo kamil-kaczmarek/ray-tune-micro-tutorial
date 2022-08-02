@@ -48,7 +48,10 @@ You should see output like this:
 ```
 Feel free to open Ray dashboard at [http://127.0.0.1:8265](http://127.0.0.1:8265)
 
-🟩 Congrats: ray is installed correctly. Plese move on the the [README](README.md) to follow next steps in the tutorial! 🟩
+🟩 Congrats: ray is installed correctly. 🟩
+
+## What to do next?
+Please head over to the [Where to Start?](https://github.com/kamil-kaczmarek/ray-tune-micro-tutorial/blob/kk/dev/README.md#where-to-start) section in the README to start the tutorial!
 
 ----
 
