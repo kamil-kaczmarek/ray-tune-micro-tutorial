@@ -22,8 +22,8 @@ pip install "ray[default]" "ray[tune]"
 
 ----
 
-# (optional, recommended) Test an environment
-Here, you check if Ray is installed correctly.
+# Test an environment
+Here, you check if Ray is installed correctly. This is optional but recommended.
 
 ## Step 1: Start Python in the interactive mode
 In your terminal run:
