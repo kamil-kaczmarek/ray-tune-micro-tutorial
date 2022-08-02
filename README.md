@@ -1,4 +1,4 @@
-# Micro tutorial on how to run and scale :rocket: hyperparameter optimization with LightGBM and Tune
+# Micro tutorial on how to run and scale hyperparameter optimization with LightGBM and Tune
 
 ![tune_overview](https://docs.ray.io/en/latest/_images/tune_overview.png)
 
