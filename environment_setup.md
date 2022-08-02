@@ -15,7 +15,7 @@ conda activate ray_tune_demo
 
 ## Step 3: Install ray and tune
 ```
-pip install "ray[default]" "ray[tune]"              
+pip install "ray[default]" "ray[tune]"
 ```
 
 🟩 Environment setup is done. You now have Ray and Tune installed. 🟩
