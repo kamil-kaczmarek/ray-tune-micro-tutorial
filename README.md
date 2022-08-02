@@ -18,9 +18,8 @@
 * Few more bits about _search algorithm_ and _scheduler_ - to better define how tuning should progress.
 
 # Where to start?
-Go ahead and open [ray_tune_micro_tutorial.ipynb](ray_tune_micro_tutorial.ipynb)
-
-But before that make sure that you have an environment ready. Please follow the instructions on [Setup an environment](environment_setup.md) page (5 minutes read).
+* First, make sure that you have an environment ready. Please follow the instructions on [Setup an environment](environment_setup.md) page (5 minutes read).
+* Once your env is ready, go ahead and start the [ray_tune_micro_tutorial.ipynb](ray_tune_micro_tutorial.ipynb).
 
 # What to do next?
 * Check the [user guides](https://docs.ray.io/en/latest/tune/tutorials/overview.html) for more in-depth introudcution to Tune.
