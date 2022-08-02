@@ -5,7 +5,7 @@ For this micro-tutorial we use conda environment manager and Python=3.8. Please 
 
 In your terminal run:
 ```
-conda create --name ray_tune_demo python=3.8.13 optuna grpcio scikit-learn lightgbm numpy
+conda create --name ray_tune_demo python=3.8.13 optuna grpcio scikit-learn lightgbm numpy jupyterlab
 ```
 
 ## Step 2: Activate an environement
