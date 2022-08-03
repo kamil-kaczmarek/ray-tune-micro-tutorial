@@ -8,7 +8,7 @@ In your terminal run:
 conda create --name ray_tune_demo python=3.8.13 optuna grpcio scikit-learn lightgbm numpy jupyterlab
 ```
 
-## Step 2: Activate an environement
+## Step 2: Activate an environment
 ```
 conda activate ray_tune_demo
 ```

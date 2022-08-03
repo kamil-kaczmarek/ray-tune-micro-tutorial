@@ -9,7 +9,7 @@
 
 ### What will you do?
 * Run HPO job with LightGBM on the structured data.
-* Configure _search algorithm_ and _scheduler_ for more afficient HPO job.
+* Configure _search algorithm_ and _scheduler_ for more efficient tuning: faster convergence and early stopping.
 * Configure Tune to better utilize available compute resources.
 
 ### What will you learn?
@@ -22,7 +22,7 @@
 * Once your env is ready, go ahead and start [ray_tune_micro_tutorial.ipynb](ray_tune_micro_tutorial.ipynb).
 
 # What to do next?
-* Check the [user guides](https://docs.ray.io/en/latest/tune/tutorials/overview.html) for more in-depth introudcution to Tune.
+* Check the [user guides](https://docs.ray.io/en/latest/tune/tutorials/overview.html) for more in-depth introduction to Tune.
 * Have a closer look at [Tune docs](https://docs.ray.io/en/latest/tune/index.html) to learn more about other [search algorithms](https://docs.ray.io/en/latest/tune/api_docs/suggestion.html) and [schedulers](https://docs.ray.io/en/latest/tune/api_docs/schedulers.html).
 * Go to the Ray tutorials page to 
 
