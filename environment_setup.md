@@ -1,19 +1,31 @@
 # Setup an environment
 For this micro-tutorial we use conda environment manager and Python=3.8. Please follow the instructions to set it up.
 
-## Step 1: Create new environment and install dependencies
+## Step 1: Clone this repository
+In your terminal run:
+```
+git clone https://github.com/kamil-kaczmarek/ray-tune-micro-tutorial.git
+```
+
+then, go to the repository directory. In your terminal run:
+```
+cd ray-tune-micro-tutorial
+```
+
+## Step 2: Create new environment and install dependencies
 
 In your terminal run:
 ```
-conda create --name ray_tune_demo python=3.8.13 optuna grpcio scikit-learn lightgbm numpy jupyterlab
+conda env create --file environment.yml
 ```
+_(this can take a while)_
 
-## Step 2: Activate an environment
+## Step 3: Activate an environment
 ```
 conda activate ray_tune_demo
 ```
 
-## Step 3: Install ray and tune
+## Step 4: Install ray and tune
 ```
 pip install "ray[default]" "ray[tune]"
 ```

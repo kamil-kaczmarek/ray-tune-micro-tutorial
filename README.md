@@ -23,6 +23,7 @@
 
 # What to do next?
 * Check the [user guides](https://docs.ray.io/en/latest/tune/tutorials/overview.html) for more in-depth introduction to Tune.
+* Learn about [Distributed LightGBM on Ray](https://docs.ray.io/en/latest/ray-more-libs/lightgbm-ray.html) that enables multi-node and multi-GPU training.
 * Have a closer look at [Tune docs](https://docs.ray.io/en/latest/tune/index.html) to learn more about other [search algorithms](https://docs.ray.io/en/latest/tune/api_docs/suggestion.html) and [schedulers](https://docs.ray.io/en/latest/tune/api_docs/schedulers.html).
 * Go to the Ray tutorials page to 
 
