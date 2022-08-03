@@ -111,7 +111,7 @@ analysis = tune.run(
     resources_per_trial={"cpu": 1},
 )
 
-# Display acc from the best trials
+# Display accuracy from the best trials
 df = analysis.dataframe(metric="valid_acc")
 print(df[["valid_acc", "trial_id", "pid"]].sort_values(by=["valid_acc"], ascending=False).head(n=5))
 
@@ -146,6 +146,6 @@ analysis = tune.run(
     scheduler=pbt_scheduler,
 )
 
-# Display acc from the best trials
+# Display accuracy from the best trials
 df = analysis.dataframe(metric="valid_acc")
 print(df[["valid_acc", "trial_id", "pid"]].sort_values(by=["valid_acc"], ascending=False).head(n=5))
