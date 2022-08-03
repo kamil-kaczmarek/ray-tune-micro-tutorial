@@ -1,9 +1,16 @@
 # Preliminaries
 import lightgbm as lgb
 import numpy as np
+import ray
 from sklearn.datasets import load_wine
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+
+# Create Ray cluster
+if ray.is_initialized:
+    ray.shutdown()
+cluster_info = ray.init()
+print(cluster_info.address_info)
 
 # Prepare dataset
 X, y = load_wine(return_X_y=True)
@@ -95,7 +102,7 @@ def train_lgbm(training_params, checkpoint_dir=None):
 # Run hyperparameter tuning, single trial
 analysis = tune.run(train_lgbm, config=search_space)
 
-# Display accuracy from the best trial
+# Display info about this trial
 df = analysis.dataframe(metric="valid_acc")
 print(df[["valid_acc", "trial_id", "pid"]])
 

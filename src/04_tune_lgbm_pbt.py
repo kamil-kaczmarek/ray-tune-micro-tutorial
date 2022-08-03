@@ -1,10 +1,17 @@
 import lightgbm as lgb
 import numpy as np
+import ray
 from ray import tune
 from ray.tune.schedulers import PopulationBasedTraining
 from sklearn.datasets import load_wine
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+
+# Create Ray cluster
+if ray.is_initialized:
+    ray.shutdown()
+cluster_info = ray.init()
+print(cluster_info.address_info)
 
 # Prepare dataset
 X, y = load_wine(return_X_y=True)
@@ -73,8 +80,9 @@ analysis = tune.run(
     metric="valid_acc",
     resources_per_trial={"cpu": 1},
     scheduler=pbt_scheduler,
+    verbose=1,
 )
 
-# Display acc from the best trials
+# Display accuracy from the best trials
 df = analysis.dataframe(metric="valid_acc")
 print(df[["valid_acc", "trial_id", "pid"]].sort_values(by=["valid_acc"], ascending=False).head(n=5))
