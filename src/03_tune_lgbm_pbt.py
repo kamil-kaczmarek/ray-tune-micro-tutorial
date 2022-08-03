@@ -26,27 +26,29 @@ search_space = {
     "bagging_fraction": 0.8,
     "bagging_freq": tune.randint(1, 11),
     "max_depth": tune.randint(1, 11),
+    "verbose": -1,
 }
 
 
 # Trainable
-def train_lgbm(training_parameters):
+def train_lgbm(training_params, checkpoint_dir=None):
+    train_data = lgb.Dataset(data=X_train, label=y_train)
+    valid_data = lgb.Dataset(data=X_valid, label=y_valid, reference=train_data)
+
     # Train LightGBM model and log results to stdout
     gbm = lgb.train(
-        params=training_parameters,
+        params=training_params,
         train_set=train_data,
         num_boost_round=10,
         valid_sets=[train_data, valid_data],
         valid_names=["train", "valid"],
-        callbacks=[lgb.log_evaluation()],
+        callbacks=[lgb.log_evaluation(period=10)],
     )
 
-    # Print accuracy on validation data
     y_pred = np.argmax(gbm.predict(X_valid), axis=1)
     acc = accuracy_score(y_true=y_valid, y_pred=y_pred)
-    print(f"accuracy is: {acc:.4f}")
 
-    # Send the current training result back to Tune
+    # Send accuracy back to Tune
     tune.report(valid_acc=acc)
 
 
