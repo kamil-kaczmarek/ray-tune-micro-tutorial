@@ -117,6 +117,7 @@ analysis = tune.run(
     num_samples=300,
     metric="valid_acc",
     resources_per_trial={"cpu": 1},
+    verbose=1,
 )
 
 # Display accuracy from the best trials
@@ -152,6 +153,7 @@ analysis = tune.run(
     metric="valid_acc",
     resources_per_trial={"cpu": 1},
     scheduler=pbt_scheduler,
+    verbose=1,
 )
 
 # Display accuracy from the best trials
