@@ -86,3 +86,6 @@ analysis = tune.run(
 # Display accuracy from the best trials
 df = analysis.dataframe(metric="valid_acc")
 print(df[["valid_acc", "trial_id", "pid"]].sort_values(by=["valid_acc"], ascending=False).head(n=5))
+
+# Shutdown Ray cluster
+ray.shutdown()

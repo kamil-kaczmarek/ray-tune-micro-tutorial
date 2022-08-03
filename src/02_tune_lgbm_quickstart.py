@@ -61,3 +61,6 @@ analysis = tune.run(train_lgbm, config=search_space)
 # Display info about this trial
 df = analysis.dataframe(metric="valid_acc")
 print(df[["valid_acc", "trial_id", "pid"]])
+
+# Shutdown Ray cluster
+ray.shutdown()
