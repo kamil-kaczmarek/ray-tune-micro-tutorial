@@ -6,7 +6,7 @@ from sklearn.datasets import load_digits
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
-# Create Ray cluster
+# Initialize Ray cluster
 if ray.is_initialized:
     ray.shutdown()
 cluster_info = ray.init()
