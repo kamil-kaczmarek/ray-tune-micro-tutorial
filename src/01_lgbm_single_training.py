@@ -29,7 +29,13 @@ gbm = lgb.Booster(params=training_parameters, train_set=train_data)
 
 # Train booster for 200 iterations
 for i in range(200):
-    gbm.update(train_set=train_data)
+    gbm = lgb.train(
+        params=training_parameters,
+        train_set=train_data,
+        num_boost_round=1,
+        init_model=gbm,
+        keep_training_booster=True,
+    )
 
 # Print accuracy on validation data
 y_pred = np.argmax(gbm.predict(X_valid), axis=1)
