@@ -7,7 +7,7 @@ from sklearn.datasets import load_digits
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
-# Create Ray cluster
+# Initialize Ray cluster
 if ray.is_initialized:
     ray.shutdown()
 cluster_info = ray.init()
@@ -17,7 +17,7 @@ print(cluster_info.address_info)
 X, y = load_digits(return_X_y=True)
 X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size=0.2, random_state=7707)
 
-# Search space
+# Define search space
 search_space = {
     "objective": "multiclass",
     "metric": "multi_logloss",
@@ -32,7 +32,7 @@ search_space = {
 }
 
 
-# Trainable
+# Define trainable
 def train_lgbm(training_params, checkpoint_dir=None):
     train_data = lgb.Dataset(data=X_train, label=y_train, free_raw_data=False)
 
