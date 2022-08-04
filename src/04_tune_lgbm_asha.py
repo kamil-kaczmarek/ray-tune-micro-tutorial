@@ -50,14 +50,14 @@ def train_lgbm(training_params, checkpoint_dir=None):
         tune.report(valid_acc=acc)
 
 
-# Scheduler: ASHA (Asynchronous Successive Halving Algorithm)
+# Create ASHA scheduler (Asynchronous Successive Halving Algorithm)
 asha = ASHAScheduler(
     time_attr="training_iteration",
     mode="max",
     grace_period=50,
 )
 
-# Run hyperparameter tuning
+# Run hyperparameter tuning with ASHA scheduler
 analysis = tune.run(
     train_lgbm,
     config=search_space,
