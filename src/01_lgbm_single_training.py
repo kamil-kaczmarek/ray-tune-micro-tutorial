@@ -30,18 +30,9 @@ gbm = lgb.Booster(params=training_parameters, train_set=train_data)
 
 # Train booster for 200 iterations
 for i in range(200):
-    gbm = lgb.train(
-        init_model=gbm,
-        params=training_parameters,
-        train_set=train_data,
-        num_boost_round=1,
-        valid_sets=[train_data, valid_data],
-        valid_names=["train", "valid"],
-        callbacks=[lgb.log_evaluation(period=100)],
-        keep_training_booster=True,
-    )
+    gbm.update(train_set=train_data)
 
 # Print accuracy on validation data
 y_pred = np.argmax(gbm.predict(X_valid), axis=1)
 acc = accuracy_score(y_true=y_valid, y_pred=y_pred)
-print(f"Accuracy on valid set: {acc:.4f}")
+print(f"Accuracy on valid set: {acc:.4f}, after {gbm.current_iteration()} iterations.")
