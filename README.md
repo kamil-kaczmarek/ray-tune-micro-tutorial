@@ -18,7 +18,7 @@
 * Few more bits about _search algorithm_ and _scheduler_ - to better define how tuning should progress.
 
 # Where to start?
-* First, make sure that you have an environment ready. Please follow the instructions on [Setup an environment](environment_setup.md) page (5 minutes read).
+* First, make sure that you have an environment ready. Please follow the instructions on [environment setup](environment_setup.md) page (5 minutes read).
 * Once your env is ready, go ahead and start [ray_tune_micro_tutorial.ipynb](ray_tune_micro_tutorial.ipynb).
 
 # What to do next?
