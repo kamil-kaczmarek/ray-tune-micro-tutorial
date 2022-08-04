@@ -20,7 +20,7 @@ training_parameters = {
     "learning_rate": 0.001,
     "feature_fraction": 0.5,
     "bagging_fraction": 0.5,
-    "bagging_freq": 100,
+    "bagging_freq": 50,
     "max_depth": 2,
     "verbose": -1,
 }
