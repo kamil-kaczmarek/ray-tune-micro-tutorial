@@ -64,7 +64,7 @@ import ray
 
 if ray.is_initialized:
     ray.shutdown()
-cluster_info = ray.init()
+cluster_info = ray.init(num_cpus=8)
 print(cluster_info.address_info)
 
 # Import tune

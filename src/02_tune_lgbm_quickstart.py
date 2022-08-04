@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 # Initialize Ray cluster
 if ray.is_initialized:
     ray.shutdown()
-cluster_info = ray.init()
+cluster_info = ray.init(num_cpus=8)
 print(cluster_info.address_info)
 
 # Prepare dataset
