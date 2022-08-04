@@ -41,7 +41,13 @@ def train_lgbm(training_params, checkpoint_dir=None):
 
     # Train booster for 200 iterations
     for i in range(200):
-        gbm.update(train_set=train_data)
+        gbm = lgb.train(
+            params=training_params,
+            train_set=train_data,
+            num_boost_round=1,
+            init_model=gbm,
+            keep_training_booster=True,
+        )
 
         y_pred = np.argmax(gbm.predict(X_valid), axis=1)
         acc = accuracy_score(y_true=y_valid, y_pred=y_pred)
