@@ -9,7 +9,6 @@ X, y = load_digits(return_X_y=True)
 X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size=0.2, random_state=7707)
 
 train_data = lgb.Dataset(data=X_train, label=y_train, free_raw_data=False)
-valid_data = lgb.Dataset(data=X_valid, label=y_valid, free_raw_data=False, reference=train_data)
 
 # Set training parameters for single training run
 training_parameters = {

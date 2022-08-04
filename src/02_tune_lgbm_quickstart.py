@@ -34,7 +34,6 @@ search_space = {
 # Trainable
 def train_lgbm(training_params, checkpoint_dir=None):
     train_data = lgb.Dataset(data=X_train, label=y_train, free_raw_data=False)
-    valid_data = lgb.Dataset(data=X_valid, label=y_valid, free_raw_data=False, reference=train_data)
 
     # Initialize booster
     gbm = lgb.Booster(params=training_params, train_set=train_data)
