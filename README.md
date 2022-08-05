@@ -8,14 +8,13 @@
 * Looking around for quick ways to try hyperparameter optimization in your project.
 
 ### What will you do?
-* Run HPO job with LightGBM on the structured data.
-* Configure _search algorithm_ and _scheduler_ for more efficient tuning: faster convergence and early stopping.
-* Configure Tune to better utilize available compute resources.
+* Run hyperparameter tuning with LightGBM on the structured data.
+* Configure _scheduler_ for more efficient tuning.
 
 ### What will you learn?
 * Few bits about Ray and Tune fundamentals.
 * How to use Tune to run hyperparameter optimization - quick start.
-* Few more bits about _search algorithm_ and _scheduler_ - to better define how tuning should progress.
+* Few more bits about _scheduler_ - to better define how tuning should progress.
 
 # Where to start?
 * First, make sure that you have an environment ready. Please follow the instructions on [environment setup](environment_setup.md) page (5 minutes read).
